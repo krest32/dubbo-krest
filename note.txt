@@ -1,0 +1,3 @@
+服务启动追加配置, 只需要添加相应参数即可绕开java 17的限制
+--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED --add-opens java.base/java.math=ALL-UNNAMED
+
