@@ -11,15 +11,15 @@
     <modules>
         <module>demo-sample</module>
         <module>demo-version</module>
+        <module>demo-generic</module>
     </modules>
 
     <properties>
-        <dubbo.version>3.2.0</dubbo.version>
+        <dubbo.version>3.2.0-beta.4</dubbo.version>
         <spring-boot.version>2.7.8</spring-boot.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <nacos-client.version>2.1.0</nacos-client.version>
     </properties>
 
     <dependencyManagement>
@@ -41,13 +41,27 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!-- 注册中心客户端 -->
+
             <dependency>
-                <groupId>com.alibaba.nacos</groupId>
-                <artifactId>nacos-client</artifactId>
-                <version>${nacos-client.version}</version>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-zookeeper-curator5</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
