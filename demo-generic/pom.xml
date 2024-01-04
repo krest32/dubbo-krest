@@ -9,13 +9,16 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>demo-sample</artifactId>
+    <artifactId>demo-generic</artifactId>
     <packaging>pom</packaging>
+
     <modules>
-        <module>common-api</module>
-        <module>service-consumer</module>
-        <module>service-provider1</module>
-        <module>service-provider2</module>
+        <module>generic-api</module>
+        <module>generic-provider</module>
+        <module>generic-consumer</module>
     </modules>
+
+
+
 
 </project>
