@@ -11,7 +11,6 @@
     <modules>
         <module>demo-sample</module>
         <module>demo-version</module>
-        <module>demo-version/version-common-api</module>
     </modules>
 
     <properties>
