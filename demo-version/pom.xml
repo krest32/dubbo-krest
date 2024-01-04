@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>version-api</module>
+        <module>version-provider</module>
+        <module>version-consumer</module>
     </modules>
 
     <properties>
