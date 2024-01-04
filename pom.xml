@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>demo-sample</module>
+        <module>demo-version</module>
     </modules>
 
     <properties>

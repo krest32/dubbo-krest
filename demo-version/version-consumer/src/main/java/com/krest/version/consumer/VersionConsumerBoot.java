@@ -1,13 +1,11 @@
-package com.krest.provider;
+package com.krest.version.consumer;
 
-import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@EnableDubbo
-public class ProviderBoot {
+public class VersionConsumerBoot {
     public static void main(String[] args) {
-        SpringApplication.run(ProviderBoot.class, args);
+        SpringApplication.run(VersionConsumerBoot.class, args);
     }
 }
