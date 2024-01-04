@@ -1,0 +1,13 @@
+server:
+  port: 8001
+
+dubbo:
+  registry:
+    address: nacos://localhost:8848
+    group: sample-demo
+  application:
+    name: version-provider
+    qos-enable: false
+  protocol:
+    name: dubbo
+    port: 20880
