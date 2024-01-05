@@ -1,18 +1,18 @@
 server:
-  port: 8001
+  port: 8002
 
 spring:
   application:
-    name: sample-provider
-
+    name: sample-consumer
 
 dubbo:
   registry:
     address: nacos://localhost:8848
     group: sample-demo
   application:
-    name: sample-provider1
+    name: sample-consumer
     qos-enable: false
   protocol:
     name: dubbo
-    port: 20880
+    port: 20881
+

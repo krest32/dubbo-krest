@@ -12,6 +12,7 @@
         <module>demo-sample</module>
         <module>demo-version</module>
         <module>demo-generic</module>
+        <module>dubbo-notify</module>
     </modules>
 
     <properties>
