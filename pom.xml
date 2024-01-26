@@ -12,6 +12,10 @@
         <module>demo-sample</module>
         <module>demo-version</module>
         <module>demo-generic</module>
+        <module>demo-async</module>
+        <module>demo-async/async-api</module>
+        <module>demo-async/async-provider</module>
+        <module>demo-async/async-consumer</module>
     </modules>
 
     <properties>
