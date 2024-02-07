@@ -7,12 +7,14 @@ spring:
 
 
 dubbo:
+  application:
+    name: ${spring.application.name}
+    qos-enable: false
   registry:
     address: nacos://localhost:8848
     group: sample-demo
-  application:
-    name: sample-provider1
-    qos-enable: false
   protocol:
     name: dubbo
     port: 20880
+  metadata-report:
+    address: nacos://127.0.0.1:8848

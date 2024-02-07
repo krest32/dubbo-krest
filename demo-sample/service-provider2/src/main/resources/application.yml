@@ -6,17 +6,29 @@ spring:
     name: sample-provider
 
 dubbo:
+  application:
+    name: ${spring.application.name}
+    qos-enable: false
   registry:
     address: nacos://localhost:8848
     group: sample-demo
-  application:
-    name: sample-provider2
-    qos-enable: false
   protocol:
     name: dubbo
     port: 20882
+  tracing:
+    enabled: true # 默认为false
+    sampling:
+      probability: 0.5 # 采样率, 默认是 0.1
+    propagation:
+      type: W3C # 传播器类型：W3C/B3 默认是W3C
+    tracing-exporter:
+      zipkin-config:
+        endpoint: http://localhost:9411/api/v2/spans
+        connect-timeout: 1s # 建立连接超时时间, 默认为1s
+        read-timeout: 10s # 传递数据超时时间, 默认为10s
 
-# tracing信息输出到logging
 logging:
+  level:
+    root: info
   pattern:
-    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+    console: '[%d{dddd/MM/yy HH:mm:ss:SSS z}] %t %5p ${spring.application.name:} %c{2} [%X{traceId:-}, %X{spanId:-}]: %m%n'
