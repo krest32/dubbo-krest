@@ -12,15 +12,14 @@
         <module>demo-sample</module>
         <module>demo-version</module>
         <module>demo-generic</module>
-        <module>demo-async</module>
-        <module>demo-async/async-api</module>
-        <module>demo-async/async-provider</module>
-        <module>demo-async/async-consumer</module>
+        <module>dubbo-notify</module>
     </modules>
 
     <properties>
-        <dubbo.version>3.2.0-beta.4</dubbo.version>
-        <spring-boot.version>2.7.8</spring-boot.version>
+        <dubbo.version>3.2.6</dubbo.version>
+        <zipkin.version>3.2.6</zipkin.version>
+        <spring-boot.version>3.0.5</spring-boot.version>
+        <nacos.version>2.2.0</nacos.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,27 +44,23 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-dependencies-zookeeper-curator5</artifactId>
+                <artifactId>dubbo-metrics-api</artifactId>
                 <version>${dubbo.version}</version>
-                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-micrometer-1.10</artifactId>
+                <version>8.14.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
-
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring-boot.version}</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
 
 </project>

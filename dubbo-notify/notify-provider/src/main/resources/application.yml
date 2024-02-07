@@ -1,0 +1,23 @@
+server:
+  port: 8001
+
+
+spring:
+  application:
+    name: sample-provider
+
+dubbo:
+  registry:
+    address: nacos://localhost:8848
+    group: sample-demo
+  application:
+    name: sample-provider1
+    qos-enable: false
+  protocol:
+    # name: injvm
+    name: dubbo
+    port: 20880
+    # 调用信息记录
+    # accesslog: true
+    # 将调用日志输入到指定文件
+    # accesslog: "D:\\1.log"

@@ -7,22 +7,14 @@ spring:
 
 
 dubbo:
+  application:
+    name: ${spring.application.name}
+    qos-enable: false
   registry:
     address: nacos://localhost:8848
     group: sample-demo
-  application:
-    name: sample-provider1
-    qos-enable: false
   protocol:
     name: dubbo
     port: 20880
-  tracing-exporter:
-    zipkin-config:
-      endpoint: http://localhost:9411/api/v2/spans
-      connect-timeout: 1s # 建立连接超时时间, 默认为1s
-      read-timeout: 10s # 传递数据超时时间, 默认为10s
-
-# tracing信息输出到logging
-logging:
-  pattern:
-    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+  metadata-report:
+    address: nacos://127.0.0.1:8848

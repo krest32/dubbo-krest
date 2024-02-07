@@ -5,11 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>demo-generic</artifactId>
+        <artifactId>dubbo-krest</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>generic-provider</artifactId>
+    <artifactId>dubbo-notify</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>notify-api</module>
+        <module>notify-provider</module>
+        <module>notify-consumer</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -18,17 +24,21 @@
     </properties>
 
     <dependencies>
+        <!-- dubbo -->
         <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>generic-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
         </dependency>
 
+        <!-- spring boot starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>3.0.9</version>
-            <scope>compile</scope>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
+
 </project>
