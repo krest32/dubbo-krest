@@ -13,6 +13,7 @@
         <module>demo-version</module>
         <module>demo-generic</module>
         <module>dubbo-notify</module>
+        <module>demo-async</module>
     </modules>
 
     <properties>

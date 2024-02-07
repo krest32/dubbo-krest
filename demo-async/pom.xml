@@ -10,7 +10,13 @@
     </parent>
 
     <artifactId>demo-async</artifactId>
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>async-api</module>
+        <module>async-consumer</module>
+        <module>async-provider</module>
+    </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
