@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloServiceController {
     @GetMapping("hello")
     public String hello(@RequestParam String name) {
-        GenericService genericService = buildGenericService("com.krest.generic.api.HelloService", null, null);
+        GenericService genericService = buildGenericService("com.krest.generic.api.HelloService",
+                "generic-provider", "1.1");
         //传入需要调用的方法，参数类型列表，参数列表
         Object result = genericService.$invoke("sayHello", new String[]{"java.lang.String"}, new Object[]{"krest"});
         return JSON.toJSONString(result);
