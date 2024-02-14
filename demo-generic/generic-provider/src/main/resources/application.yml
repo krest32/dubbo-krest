@@ -2,9 +2,13 @@ server:
   port: 8001
 
 dubbo:
-  registry:
-    address: nacos://localhost:8848
-    group: sample-demo
+  registries:
+    beijingRegistry:
+      address: nacos://localhost:8848
+      group: sample-demo
+    hangzhouRegistry:
+      address: zookeeper://localhost:2181
+      group: sample-demo
   application:
     name: generic-provider
     qos-enable: false
